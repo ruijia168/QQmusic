@@ -1,0 +1,353 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 3587615 */
+  src: url('https://at.alicdn.com/t/c/font_3587615_67kxgzltrpv.woff2?t=1660477531179') format('woff2'),
+       url('https://at.alicdn.com/t/c/font_3587615_67kxgzltrpv.woff?t=1660477531179') format('woff'),
+       url('https://at.alicdn.com/t/c/font_3587615_67kxgzltrpv.ttf?t=1660477531179') format('truetype');
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+#hh {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.header {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  .top {
+    height: 12vh;
+    .top-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .box {
+        width: 5%;
+        height: 15vh;
+        margin: 0px 12px;
+        padding-top: 30px;
+        font-size: 18px;
+        text-align: center;
+        a:hover {
+          color: rgb(49, 194, 124);
+        }
+      }
+
+      .box:focus {
+        background-color: rgb(49, 194, 124);
+        color: white;
+      }
+      .box:nth-child(1) {
+        padding-top: 25px;
+        width: 10%;
+        img {
+          width: 100%;
+        }
+      }
+      .box:nth-child(7) {
+        padding-top: 25px;
+        width: 13%;
+        input {
+          display: block;
+          width: 100%;
+          height: 37px;
+          border-radius: 5px;
+          padding-left: 6px;
+          border: 2px solid rgb(242, 242, 242);
+        }
+        input:focus {
+          outline: none;
+        }
+        margin-right: 6px;
+      }
+      .box:nth-child(8) {
+        margin: 0px 6px;
+      }
+      .box:nth-child(9) {
+        width: 7%;
+        margin: 0px 6px;
+        margin-top: -5px;
+        select {
+          padding-left: 20px;
+          width: 100%;
+          display: block;
+          height: 40px;
+          background-color: rgb(49, 194, 124);
+          color: white;
+          border: none;
+          border-radius: 5px;
+        }
+        select:focus {
+          outline: none;
+        }
+      }
+      .box:nth-child(10) {
+        width: 5%;
+        margin: 0px 6px;
+        margin-top: -5px;
+        select {
+          padding-left: 15px;
+          width: 100%;
+          display: block;
+          height: 40px;
+          border: 1px solid rgb(216, 215, 215);
+          border-radius: 5px;
+        }
+        select:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .hr {
+    width: 80vw;
+    border-top: 1px solid rgb(216, 215, 215);
+    height: 1px;
+    margin: 0 auto;
+  }
+  .bottom {
+    height: 8vh;
+    ul {
+      width: 58%;
+      height: 100%;
+      text-align: center;
+      position: relative;
+      left: 24%;
+      li {
+        height: 100%;
+        margin: 0 23px;
+        float: left;
+        list-style: none;
+        line-height: 8vh;
+        &::after {
+          content: "";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden;
+        }
+        a:hover {
+          color: rgb(49, 194, 124);
+        }
+      }
+    }
+  }
+}
+.main-wrap {
+  width: 100vw;
+  height: 70vh;
+  background: linear-gradient(
+    to bottom,
+    rgb(242, 242, 242),
+    rgb(250, 250, 250)
+  );
+  .main-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70vh;
+    h2 {
+      position: absolute;
+      letter-spacing: 12px;
+      font-weight: 500;
+      left: 500px;
+      top: 20px;
+      font-size: 25px;
+    }
+    .nav-ul {
+      overflow: hidden;
+      max-width: 600px;
+      position: relative;
+      left: 300px;
+      list-style: none;
+      top: 80px;
+      .nav-li {
+        float: left;
+        margin-right: 25px;
+        font-size: 17px;
+        cursor: pointer;
+        &:hover {
+          color: rgb(49, 194, 124);
+        }
+      }
+      .nav-li::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+    .lunbo-wrap {
+      position: relative;
+      top: 120px;
+      // overflow: hidden;
+      margin-bottom: 20px;
+      height: 350px;
+      .toleft {
+        width: 80px;
+        height: 100px;
+        background-color: rgb(238, 238, 238);
+        position: absolute;
+        left: -166px;
+        top: 60px;
+        text-align: center;
+        transition: 0.5s;
+        .iconfont-left {
+          position: relative;
+          font-family: "iconfont" !important;
+          font-size: 33px;
+          top: 25px;
+        }
+        &:hover {
+          background-color: rgb(224, 224, 224);
+          transform: translateX();
+        }
+      }
+      .toright {
+        width: 80px;
+        height: 100px;
+        background-color: rgb(238, 238, 238);
+        position: absolute;
+        right: -166px;
+        top: 60px;
+        text-align: center;
+        transition: 0.5s;
+        .iconfont-right {
+          position: relative;
+          font-family: "iconfont" !important;
+          font-size: 33px;
+          top: 25px;
+        }
+      }
+      .core-lunbo {
+        overflow: hidden;
+        .lunbo-ul {
+          display: block;
+          width: 1250%;
+          transition: 0.5s;
+          overflow: hidden;
+          height: 300px;
+          .lunbo-li {
+            overflow: hidden;
+            display: inline-block;
+            list-style: none;
+            width: 230px;
+            height: 300px;
+            margin-right: 8px;
+            .title {
+              padding-top: 10px;
+            }
+            .other {
+              font-size: 14px;
+              color: rgb(170, 182, 179);
+              padding-top: 3px;
+              .number {
+                text-indent: 20em;
+              }
+            }
+            .img {
+              position: relative;
+              width: 100%;
+              height: 220px;
+              overflow: hidden;
+              // .img:hover{
+
+              // }
+              img {
+                display: block;
+                width: 100%;
+                height: 220px;
+                transition: 0.5s;
+                background-size: contain;
+                overflow: hidden;
+                z-index: 6;
+              }
+              // img:hover{
+              //   transform: scale(1.1,1.1);
+              // }
+              .cover {
+                overflow: hidden;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 220px;
+                background-color: black;
+                opacity: 0;
+                transition: 0.5s;
+                z-index: 6;
+              }
+              .cover:hover ~ img {
+                transform: scale(1.1, 1.1);
+              }
+              .cover:hover {
+                opacity: .3;
+              }
+              .cover:hover+.play{
+                opacity: 1 !important; 
+                transform: scale(1.1,1.1);
+              }
+              .play{
+                font-family: "iconfont" !important;
+                position: absolute;
+                font-size: 60px;
+                color: white;
+                top: 80px;
+                left:80px;
+                z-index: 999;
+                opacity: 0;
+                transform: scale(0.1,0.1);
+                transition: .5s;
+                            
+              }
+            }
+          }
+        }
+        .coinCollection {
+          width: 100%;
+          height: 20px;
+          margin-left: 500px;
+          .lunbodian {
+            display: inline-block;
+            width: 28px;
+            height: 12px;
+            padding: 0 0 26px;
+            margin: 0 1px;
+            background: transparent;
+            &:hover .slide{
+              background-color: rgb(178, 178, 178);
+            }
+            .slide {
+              display: block;
+              width: 8px;
+              height: 8px;
+              background-color: rgba(0, 0, 0, 0.1);
+              border-radius: 12px;
+              margin: 0 auto;
+             
+            }
+            .slide-selected{
+              display: block;
+              width: 8px;
+              height: 8px;
+              background-color: rgba(178, 178, 178);
+              border-radius: 12px;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
